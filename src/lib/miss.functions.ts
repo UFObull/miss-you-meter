@@ -42,9 +42,10 @@ export const incrementMiss = createServerFn({ method: "POST" })
   )
   .handler(async ({ data }) => {
     const supabase = makePublicClient();
-    const { data: row, error } = await supabase.rpc("increment_count", {
+    const { data: rows, error } = await supabase.rpc("increment_count", {
       which: data.who,
     });
     if (error) throw error;
-    return row as MissCounts;
+    const row = (rows as unknown as MissCounts[])?.[0];
+    return row ?? { liam_count: 0, hope_count: 0 };
   });
