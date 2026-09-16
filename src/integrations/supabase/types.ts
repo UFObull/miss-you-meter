@@ -14,13 +14,39 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      miss_counts: {
+        Row: {
+          hope_count: number
+          id: number
+          liam_count: number
+          updated_at: string
+        }
+        Insert: {
+          hope_count?: number
+          id?: number
+          liam_count?: number
+          updated_at?: string
+        }
+        Update: {
+          hope_count?: number
+          id?: number
+          liam_count?: number
+          updated_at?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      increment_count: {
+        Args: { which: string }
+        Returns: {
+          hope_count: number
+          liam_count: number
+        }[]
+      }
     }
     Enums: {
       [_ in never]: never
