@@ -1,14 +1,18 @@
-# Welcome to your Lovable project
+# Miss You Tracker
+
+i have a crush on a girl and i want to make a website that will have two buttons to say who misses eachotehr more, one button will be a button i can click to  count up how much i miss her and th other will be the same but for her missing me
 
 This project was built with [Lovable](https://lovable.dev).
 
+**Live app**: https://miss-you-meter.lovable.app
+
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/bf76bc7f-2a21-4018-96af-a4b03de593f8).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +24,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
