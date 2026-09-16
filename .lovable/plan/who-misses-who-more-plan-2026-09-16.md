@@ -33,9 +33,9 @@ Since counts must sync live across two phones, this needs a backend. We'll enabl
 
 1. **Enable Lovable Cloud** via the integration tool.
 2. **Database migration** — create `miss_counts` table (seeded at 0/0), the `increment_count` RPC, grants, and RLS allowing public reads.
-3. **`src/lib/miss.functions.ts`** — server function wrapping the increment RPC (so the publishable key stays server-side).
-4. **`src/routes/index.tsx`** — the main page: two buttons, live counts via Supabase realtime subscription, tap-to-increment, heart-burst animation, winner line. Replaces the current placeholder.
-5. **`src/routes/__root.tsx`** — add the web-font `<link>` and a proper page title/description.
+3. `**src/lib/miss.functions.ts**` — server function wrapping the increment RPC (so the publishable key stays server-side).
+4. `**src/routes/index.tsx**` — the main page: two buttons, live counts via Supabase realtime subscription, tap-to-increment, heart-burst animation, winner line. Replaces the current placeholder.
+5. `**src/routes/__root.tsx**` — add the web-font `<link>` and a proper page title/description.
 6. **Head metadata** — set a fun title like "Liam & Hope 💛 Who Misses Who More?" on the index route.
 
 ## What you'll see
@@ -45,4 +45,4 @@ A warm, playful single page with two heart buttons. Tap yours and your number cl
 ## Notes / open items
 
 - No accounts needed — the page is public and shared. (Anyone with the link could tap, but it's just for fun. Say the word if you'd rather lock it to just the two of you.)
-- For maximum battery friendliness the live updates use Supabase realtime; it falls back to a short poll if realtime isn't available.
+- For maxindlinemum battery friess the live updates use Supabase realtime; it falls back to a short poll if realtime isn't available.
