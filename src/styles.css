@@ -59,12 +59,31 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Cute & playful palette for the Liam & Hope miss-counter. */
+  --color-cream: var(--cream);
+  --color-blush: var(--blush);
+  --color-blush-foreground: var(--blush-foreground);
+  --color-butter: var(--butter);
+  --color-butter-foreground: var(--butter-foreground);
+  --color-rose: var(--rose);
+  --color-rose-foreground: var(--rose-foreground);
+  --color-grape: var(--grape);
 }
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --background: oklch(0.981 0.014 75);
+  --foreground: oklch(0.34 0.045 350);
+  /* Cute & playful palette. */
+  --cream: oklch(0.981 0.014 75);
+  --grape: oklch(0.34 0.045 350);
+  --blush: oklch(0.85 0.075 6);
+  --blush-foreground: oklch(0.99 0.003 247);
+  --butter: oklch(0.935 0.105 92);
+  --butter-foreground: oklch(0.32 0.05 70);
+  --rose: oklch(0.66 0.2 8);
+  --rose-foreground: oklch(0.99 0.003 247);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
@@ -140,5 +159,42 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Nunito", ui-rounded, "Segoe UI", system-ui, sans-serif;
   }
+}
+
+/* Floating heart burst when a miss-button is tapped. */
+@keyframes heart-float {
+  0% {
+    transform: translate(-50%, 0) scale(0.4) rotate(var(--rot, 0deg));
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -10px) scale(1) rotate(var(--rot, 0deg));
+  }
+  100% {
+    transform: translate(calc(-50% + var(--drift, 0px)), -150px) scale(0.7)
+      rotate(var(--rot, 0deg));
+    opacity: 0;
+  }
+}
+
+.heart-particle {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  animation: heart-float 1s ease-out forwards;
+  pointer-events: none;
+}
+
+/* Gentle press animation. */
+@keyframes button-pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(0.93); }
+  100% { transform: scale(1); }
+}
+
+.animate-pop {
+  animation: button-pop 0.28s ease;
 }
